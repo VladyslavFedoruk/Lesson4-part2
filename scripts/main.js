@@ -1,8 +1,7 @@
 //Вивести на сторінку в один рядок через кому числа від 10 до 20.
 document.write(`- Вивести на сторінку в один рядок через кому числа від 10 до 20: <br>`)
-const MATH = [10, 11, 12, 13, 14, 15, 16, 17, 18.19, 20];
-for (let i; i < MATH.lenght; i++);
-document.write(`${MATH} <br>`);
+for(let i=10; i<=20; i++) 
+document.write(`${i} <br>`);
 
 //Вивести квадрати чисел від 10 до 20.
 document.write(`- Вивести квадрати чисел від 10 до 20: <br>`)
@@ -65,33 +64,29 @@ for (let k = 100; k <= 200; k++){
 //Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
 document.write(`- Дано натуральне число. Знайти та вивести на сторінку всі його дільники: <br>`);
 const number = prompt('Укажіть будь-яке натуральне число')
-for (let i = 1; i <= number; i++) {
+// Знайти та вивести на сторінку всі його дільники
+for (var i = 1; i <= number; i++) {
   if (number % i === 0) {
-    document.write(i + ",");
+    document.write(i + " ");
   }
 }
+// Визначити кількість його парних дільників
+let Count = 0;
+for (let i = 1; i <= number; i++) {
+  if (number % i === 0 && i % 2 === 0) {
+    Count++;
+  }
+}
+document.write("<br>Кількість парних дільників: " + Count);
 
-//Визначити кількість його парних дільників
-document.write(`- Визначити кількість його парних дільників: <br>`);
-const COUPLE_OF_PAIR = prompt('Укажіть, будь яке, число')
-let count = 0;
-for (let i = 1; i <= COUPLE_OF_PAIR; i++) {
-  if (COUPLE_OF_PAIR % i === 0 && i % 2 === 0) {
-    count++;
+// Знайти суму його парних дільників
+let CountSum = 0;
+for (var i = 1; i <= number; i++) {
+  if (number % i === 0 && i % 2 === 0) {
+    CountSum += i;
   }
 }
-document.write(`Кількість парних дільників числа ${COUPLE_OF_PAIR}: ${count} <br>`);
-
-//Знайти суму його парних дільників
-document.write(`- Знайти суму його парних дільників: <br>`);
-const SUM_OF_DILNIKOV = prompt('Укажіть, будь яке, число'); // Задане натуральне число
-let summa = 0;
-for (let i = 1; i <= SUM_OF_DILNIKOV; i++) {
-  if (SUM_OF_DILNIKOV % i === 0 && i % 2 === 0) {
-    summa += i;
-  }
-}
-document.write(`Сума парних дільників числа ${SUM_OF_DILNIKOV}: ${summa} <br>`);
+document.write("<br>Сума парних дільників: " + CountSum);
 
 //Надрукувати повну таблицю множення від 1 до 10
 document.write(`- Надрукувати повну таблицю множення від 1 до 10: <br>`);
